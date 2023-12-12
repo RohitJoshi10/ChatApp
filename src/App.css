@@ -1,0 +1,250 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: rgb(58, 50, 189);
+  background: linear-gradient(90deg, rgba(58, 50, 189, 1) 0%, rgba(19, 196, 232, 1) 48%, rgba(66, 66, 212, 1) 100%);
+  color: white;
+}
+
+.App {
+  text-align: center;
+  max-width: 728px;
+  margin: 0 auto;
+}
+
+.App header {
+  background: rgb(58, 50, 189);
+  background: linear-gradient(90deg, rgba(58, 50, 189, 1) 0%, rgba(15, 11, 71, 1) 52%, rgba(12, 12, 12, 1) 100%, rgba(66, 66, 212, 1) 100%);
+  height: 10vh;
+  min-height: 50px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  max-width: 728px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.App section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(58, 50, 189);
+  background: linear-gradient(90deg, rgba(58, 50, 189, 1) 0%, rgba(226, 19, 232, 1) 100%, rgba(66, 66, 212, 1) 100%);
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+form {
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  background-color: #181717;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  font-size: 1.5rem;
+  animation: slide-up 0.5s ease;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+form button {
+  width: 20%;
+  background-color: #383838;
+}
+
+input {
+  line-height: 1.5;
+  width: 100%;
+  font-size: 1.5rem;
+  background: #3a3a3a;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+}
+
+button {
+  background-color: #282c34;
+  border: none;
+  color: whitesmoke;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sign-in,
+.sign-out,
+.sent-btn {
+  color: #282c34;
+  background: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: fade-in 1s ease;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.sign-in:hover,
+.sign-out:hover,
+.sent-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.sent-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sent-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+}
+
+ul,
+li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: right;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  color: white;
+  background: rgb(12, 12, 12);
+  background: linear-gradient(90deg, rgba(12, 12, 12, 1) 0%, rgba(159, 19, 140, 1) 0%, rgba(164, 14, 205, 1) 75%);
+  align-self: flex-end;
+}
+
+.received p {
+  background: #e5e5ea;
+  color: black;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+  main {
+    height: 60vh;
+  }
+
+  form {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .sign-in,
+  .sign-out,
+  .sent-btn {
+    max-width: 300px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    height: 50vh;
+  }
+
+  form {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+
+  .sign-in,
+  .sign-out,
+  .sent-btn {
+    max-width: 250px;
+    padding: 15px;
+  }
+}
